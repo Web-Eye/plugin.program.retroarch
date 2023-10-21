@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon
+    id="plugin.program.steamlink"
+    version="1.0.0+Beta"
+    name="Steamlink"
+    provider-name="WebEye">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.pluginsource" library="main.py">
+    <provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <language>en</language>
+    <platform>all</platform>
+    <license>GPL-3.0-only</license>
+    <website>https://github.com/Web-Eye/kodi</website>
+    <source>https://github.com/Web-Eye/plugin.video.hartaberfair</source>
+    <summary lang="de">Mediathek der bekannten ARD Talk-Show "Hart aber Fair"</summary>
+    <summary lang="en">This plugin adds a Kodi launcher for starting Steamlink to broadcast Steam games from your Kodi setup.</summary>
+    <disclaimer lang="en_GB">Use at your own risk. Post suggestions, improvements or bug reports directly to GitHub.</disclaimer>
+    <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Anregungen, Verbesserungen oder Bugs bitte direkt über GitHub posten.</disclaimer>
+    <assets>
+      <icon>resources/assets/icon.png</icon>
+      <fanart>resources/assets/1080p/fanart.jpg</fanart>
+      <screenshot>resources/assets/screenshot_1.png</screenshot>
+      <screenshot>resources/assets/screenshot_2.png</screenshot>
+      <screenshot>resources/assets/screenshot_3.png</screenshot>
+    </assets>
+    <news>
+    </news>
+  </extension>
+
+</addon>
