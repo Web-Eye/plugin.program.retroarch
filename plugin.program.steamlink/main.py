@@ -15,9 +15,28 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-from libs.hartaberfair import HardAberFair
+"""
+Steamlink Launcher for Kodi
+"""
 
-if __name__ == '__main__':
-    app = HardAberFair()
-    app.DoSome()
+import xbmcaddon
+
+from subprocess import check_call
+
+
+class KodiAddon(object):
+    def __init__(self):
+        self._addon = xbmcaddon.Addon()
+        self.path = self._addon.getAddonInfo('path').decode('utf-8')
+
+    def run(self):
+        check_call(['bash', self.path + '/resources/lib/start.sh'])
+        Quit()
+
+def main():
+    addon = KodiAddon()
+    addon.run()
+
+
+main()
 
