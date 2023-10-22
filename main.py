@@ -20,6 +20,9 @@ Steamlink Launcher for Kodi
 """
 
 import xbmcaddon
+import xbmcvfs
+import os.path
+import stat
 
 from subprocess import check_call
 
@@ -27,11 +30,25 @@ from subprocess import check_call
 class KodiAddon(object):
     def __init__(self):
         self._addon = xbmcaddon.Addon()
-        self.path = self._addon.getAddonInfo('path').decode('utf-8')
+        self._ADDON_ID = 'plugin.program.steamlink'
+        self._path = xbmcvfs.translatePath('special://home/addons/' + self._ADDON_ID)
 
     def run(self):
-        check_call(['bash', self.path + '/resources/lib/start.sh'])
-        Quit()
+        self.create_files()
+        check_call(['bash', self._path + '/resources/lib/start.sh'])
+
+    def create_files(self):
+        batch_filename = self._path + '/resources/lib/start.sh'
+        if not os.path.isfile(batch_filename):
+            with open(batch_filename, 'w') as outfile:
+                outfile.write("""#!/bin/bash
+            flatpak run com.valvesoftware.SteamLink
+            """)
+                outfile.close()
+
+            st = os.stat(batch_filename)
+            os.chmod(batch_filename, st.st_mode | stat.S_IEXEC)
+
 
 def main():
     addon = KodiAddon()
@@ -39,4 +56,3 @@ def main():
 
 
 main()
-
