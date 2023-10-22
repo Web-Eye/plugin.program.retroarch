@@ -23,8 +23,8 @@
     <disclaimer lang="en_GB">Use at your own risk. Post suggestions, improvements or bug reports directly to GitHub.</disclaimer>
     <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Anregungen, Verbesserungen oder Bugs bitte direkt über GitHub posten.</disclaimer>
     <assets>
-<!--      <icon>resources/assets/logo.webp</icon>-->
-<!--      <fanart>resources/assets/wallpaper.png</fanart>-->
+      <icon>resources/assets/logo.webp</icon>
+      <fanart>resources/assets/wallpaper.png</fanart>
     </assets>
     <news>
     </news>
