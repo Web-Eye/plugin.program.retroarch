@@ -19,12 +19,22 @@
 Steamlink Launcher for Kodi
 """
 
+import xbmc
 import xbmcaddon
 import xbmcvfs
 import os.path
 import stat
+import time
 
-from subprocess import check_call
+from subprocess import check_call, check_output, CalledProcessError
+
+
+def process_status(process_name):
+    try:
+        check_output(["pgrep", process_name])
+        return True
+    except CalledProcessError:
+        return False
 
 
 class KodiAddon(object):
@@ -34,8 +44,16 @@ class KodiAddon(object):
         self._path = xbmcvfs.translatePath('special://home/addons/' + self._ADDON_ID)
 
     def run(self):
+        xbmc.executebuiltin('InhibitScreensaver(true)')
         self.create_files()
         check_call(['bash', self._path + '/resources/lib/start.sh'])
+
+        time.sleep(5)
+        while process_status('steamlink'):
+            time.sleep(1)
+
+        xbmc.executebuiltin('InhibitScreensaver(false)')
+        xbmc.executebuiltin('ActivateWindow(home)')
 
     def create_files(self):
         batch_filename = self._path + '/resources/lib/start.sh'
