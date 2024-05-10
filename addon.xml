@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
     id="plugin.program.steamlink"
-    version="1.0.0+Beta"
+    version="1.1.0+Beta"
     name="Steamlink"
     provider-name="WebEye">
   <requires>
