@@ -26,7 +26,7 @@ import os.path
 import stat
 import time
 
-from subprocess import check_call, check_output, CalledProcessError
+from subprocess import check_output, CalledProcessError
 
 
 def process_status(process_name):
@@ -46,11 +46,7 @@ class KodiAddon(object):
     def run(self):
         xbmc.executebuiltin('InhibitScreensaver(true)')
         self.create_files()
-        check_call(['bash', self._path + '/resources/lib/start.sh'])
-
-        time.sleep(5)
-        while process_status('steamlink'):
-            time.sleep(1)
+        check_output(['bash', self._path + '/resources/lib/start.sh'])
 
         xbmc.executebuiltin('InhibitScreensaver(false)')
         xbmc.executebuiltin('ActivateWindow(home)')
