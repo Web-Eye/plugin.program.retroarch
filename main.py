@@ -40,7 +40,7 @@ def process_status(process_name):
 class KodiAddon(object):
     def __init__(self):
         self._addon = xbmcaddon.Addon()
-        self._ADDON_ID = 'plugin.program.steamlink'
+        self._ADDON_ID = 'plugin.program.retroarch'
         self._path = xbmcvfs.translatePath('special://home/addons/' + self._ADDON_ID)
 
     def run(self):
@@ -56,7 +56,7 @@ class KodiAddon(object):
         if not os.path.isfile(batch_filename):
             with open(batch_filename, 'w') as outfile:
                 outfile.write("""#!/bin/bash
-            flatpak run com.valvesoftware.SteamLink
+            retroarch
             """)
                 outfile.close()
 

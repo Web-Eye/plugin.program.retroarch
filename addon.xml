@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <addon
-    id="plugin.program.steamlink"
-    version="1.1.0+Beta"
+    id="plugin.program.retroarch"
+    version="1.0.0+Beta"
     name="Steamlink"
     provider-name="WebEye">
   <requires>
@@ -17,9 +17,9 @@
     <platform>linux</platform>
     <license>GPL-3.0-only</license>
     <website>https://github.com/Web-Eye/</website>
-    <source>https://github.com/Web-Eye/plugin.program.steamlink</source>
-    <summary lang="de">Dieses Plugin fügt einen Kodi-Launcher zum Starten von Steamlink hinzu, um Steam-Spiele von deinem Kodi-Setup zu übertragen.</summary>
-    <summary lang="en">This plugin adds a Kodi launcher for starting Steamlink to broadcast Steam games from your Kodi setup.</summary>
+    <source>https://github.com/Web-Eye/plugin.program.retroarch</source>
+    <summary lang="de">Dieses Plugin fügt einen Kodi-Launcher zum Starten von Retroarch hinzu.</summary>
+    <summary lang="en">This plugin adds a Kodi launcher for starting Retroarch.</summary>
     <disclaimer lang="en_GB">Use at your own risk. Post suggestions, improvements or bug reports directly to GitHub.</disclaimer>
     <disclaimer lang="de_DE">Benutzung auf eigene Gefahr. Anregungen, Verbesserungen oder Bugs bitte direkt über GitHub posten.</disclaimer>
     <assets>
